@@ -1,67 +1,46 @@
+import 'package:firebase/signup.dart';
 import 'package:flutter/material.dart';
-
-class Registration extends StatefulWidget {
-  const Registration({Key? key}) : super(key: key);
+class Login extends StatefulWidget {
+  const Login({Key? key}) : super(key: key);
 
   @override
-  State<Registration> createState() => _RegistrationState();
+  State<Login> createState() => _LoginState();
 }
-class _RegistrationState extends State<Registration> {
+
+class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white60,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal:50),
+        padding: const EdgeInsets.all(20.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height:40,),
+            SizedBox(height: 40,),
             Center(
               child: Text(
-                ' Sign Up',
+                '  Login',
                 style: TextStyle(
-                  fontSize: 25,
+                  fontSize: 35,
                   color: Colors.black,
                   fontWeight: FontWeight.w800,
                 ),
               ),
             ),
-            SizedBox(height:15,),
+            SizedBox(height: 15),
             Center(
               child: Text(
-                'Create an account,its free',
+                'Login to Your Account',
                 style: TextStyle(
-                  fontSize: 10,
+                  fontSize: 15,
                   color: Colors.grey,
                   fontWeight: FontWeight.w800,
                 ),
               ),
             ),
             SizedBox(height: 40,),
-            Text(
-              'UserName',
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.black45,
-                fontWeight: FontWeight.w800,
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white24,
-                    border: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    hintText: 'Enter Your UserName'),
-              ),
-            ),
-
             Text(
               'Email',
               style: TextStyle(
@@ -106,70 +85,55 @@ class _RegistrationState extends State<Registration> {
                     hintText: 'Enter Your Password'),
               ),
             ),
-            Text(
-              'Confirm Password',
-              style: TextStyle(
-                fontSize: 15,
-                color: Colors.black45,
-                fontWeight: FontWeight.w800,
+            Image.network(
+                'https://png.pngtree.com/png-clipart/20230825/original/pngtree-online-assistant-center-call-service-picture-image_8656835.png'),
+            SizedBox(height: 30,),
+            Container(
+              width: double.infinity,
+              height: 40,
+              decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(50)
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: TextField(
-                decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white38,
-                    border: OutlineInputBorder(
-                        borderSide: const BorderSide(color: Colors.white),
-                        borderRadius: BorderRadius.circular(50)),
-                    hintText: 'Enter Your Password '),
-              ),
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Center(
               child: ElevatedButton(
                 onPressed: () {
 
                 },
-                  child: Text(
-                    ' Sign up',
-                  ),
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.blueAccent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(50))
+                ),
+
+                child: Text(
+                  'Login',
                 ),
               ),
-            ),
-            SizedBox(
-              height: 40,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Already Have an account ? ',
+                  'Dont Have an account ? ',
                   style: TextStyle(
                     fontSize: 15,
                     color: Colors.grey,
                     fontWeight: FontWeight.w800,
                   ),
                 ),
-                TextButton(onPressed:(){
+                TextButton(onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Registration()),
+                    MaterialPageRoute(
+                        builder: (context) => const Registration()),
                   );
-                }, child:Text('Login'))
+                }, child: Text(' Sign Up'))
               ],
             ),
           ],
+
         ),
       ),
     );
   }
 }
+

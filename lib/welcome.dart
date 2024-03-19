@@ -1,3 +1,5 @@
+import 'package:firebase/login.dart';
+import 'package:firebase/signup.dart';
 import 'package:flutter/material.dart';
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -51,7 +53,10 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Login()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
@@ -73,7 +78,10 @@ class _WelcomeState extends State<Welcome> {
                 ),
                 child: ElevatedButton(
                   onPressed: () {
-
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Registration()),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50))
