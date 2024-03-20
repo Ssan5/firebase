@@ -1,3 +1,4 @@
+import 'package:firebase/login.dart';
 import 'package:flutter/material.dart';
 
 class Registration extends StatefulWidget {
@@ -10,7 +11,7 @@ class _RegistrationState extends State<Registration> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white60,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal:50),
         child: Column(
@@ -23,7 +24,7 @@ class _RegistrationState extends State<Registration> {
                 ' Sign Up',
                 style: TextStyle(
                   fontSize: 25,
-                  color: Colors.black,
+                  color: Colors.indigoAccent,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -34,7 +35,7 @@ class _RegistrationState extends State<Registration> {
                 'Create an account,its free',
                 style: TextStyle(
                   fontSize: 10,
-                  color: Colors.grey,
+                  color: Colors.black45,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -162,7 +163,7 @@ class _RegistrationState extends State<Registration> {
                 TextButton(onPressed:(){
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Registration()),
+                    MaterialPageRoute(builder: (context) => const Login()),
                   );
                 }, child:Text('Login'))
               ],

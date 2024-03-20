@@ -11,7 +11,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white60,
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
@@ -24,8 +24,8 @@ class _LoginState extends State<Login> {
                 '  Login',
                 style: TextStyle(
                   fontSize: 35,
-                  color: Colors.black,
-                  fontWeight: FontWeight.w800,
+                  color: Colors.deepPurpleAccent,
+                  fontWeight: FontWeight.w900,
                 ),
               ),
             ),
@@ -35,7 +35,7 @@ class _LoginState extends State<Login> {
                 'Login to Your Account',
                 style: TextStyle(
                   fontSize: 15,
-                  color: Colors.grey,
+                  color: Colors.black45,
                   fontWeight: FontWeight.w800,
                 ),
               ),
@@ -85,8 +85,13 @@ class _LoginState extends State<Login> {
                     hintText: 'Enter Your Password'),
               ),
             ),
-            Image.network(
-                'https://png.pngtree.com/png-clipart/20230825/original/pngtree-online-assistant-center-call-service-picture-image_8656835.png'),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+
+              // Image.network(src)
+              child: Center(child: Image.network('https://cdn.dribbble.com/users/4767249/screenshots/19975971/media/5ece3734f172e867e512f8a690822c66.gif',height:300,width: 300,)),
+
+            ),
             SizedBox(height: 30,),
             Container(
               width: double.infinity,
@@ -100,8 +105,10 @@ class _LoginState extends State<Login> {
 
                 },
                 style: ElevatedButton.styleFrom(
+                    primary: Colors.deepPurpleAccent,
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(50))
+
                 ),
 
                 child: Text(
